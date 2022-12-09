@@ -1,4 +1,4 @@
-# Flutter Aplicattion 
+# Flutter Application 
 
 A new Flutter project.
 
