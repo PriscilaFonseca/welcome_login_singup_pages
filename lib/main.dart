@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_model/constants.dart';
+import 'screens/welcome/welcome.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Application',
+      theme: ThemeData(
+          primaryColor: pPrimaryColor, scaffoldBackgroundColor: Colors.white),
+      home: const WelcomeScreen(),
+    );
+  }
+}
