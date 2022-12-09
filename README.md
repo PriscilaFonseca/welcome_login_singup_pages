@@ -1,4 +1,4 @@
-# flutter_application_model
+# Flutter Aplicattion 
 
 A new Flutter project.
 
@@ -14,3 +14,5 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+Original Project Youtube: https://www.youtube.com/watch?v=ExKYjqgswJg and GitHub: https://github.com/abuanwar072/Welcome-Login-Signup-Page-Flutter
