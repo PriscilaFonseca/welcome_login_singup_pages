@@ -4,35 +4,36 @@ import 'package:flutter_application_model/constants.dart';
 import 'package:flutter_application_model/stores/login_store.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-class RoundedPasswordField extends StatefulWidget {
+class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final String labelText;
+  final String? errorText;
   const RoundedPasswordField({
     Key? key,
     required this.onChanged,
+    required this.errorText,
+    required this.labelText,
   }) : super(key: key);
 
-  @override
-  State<RoundedPasswordField> createState() => _RoundedPasswordFieldState();
-}
-
-class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
   @override
   Widget build(BuildContext context) {
     LoginStore loginStore = LoginStore();
 
-    return TextFieldContainer(
-      child: Observer(
-        builder: (_) {
-          return TextField(
+    return Observer(
+      builder: (_) {
+        return TextFieldContainer(
+          child: TextField(
+            onChanged: onChanged,
             obscureText: !loginStore.passwordVisible,
-            onChanged: loginStore.setPassword,
+            keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
-              labelText: 'Password',
+              errorText: errorText,
+              labelText: labelText,
+              border: InputBorder.none,
               icon: const Icon(
                 Icons.lock,
                 color: pPrimaryColor,
               ),
-              border: InputBorder.none,
               suffixIcon: InkWell(
                 onTap: loginStore.togglePasswordVisibility,
                 child: Icon(
@@ -43,10 +44,9 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
                 ),
               ),
             ),
-            keyboardType: TextInputType.visiblePassword,
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }
