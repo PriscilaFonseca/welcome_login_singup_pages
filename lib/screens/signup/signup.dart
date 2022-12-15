@@ -3,21 +3,17 @@ import 'package:flutter_application_model/components/already_have_an_account.dar
 import 'package:flutter_application_model/components/rounded_button.dart';
 import 'package:flutter_application_model/components/rounded_inpult_field.dart';
 import 'package:flutter_application_model/components/rounded_password_field.dart';
-import 'package:flutter_application_model/screens/home/home.dart';
-import 'package:flutter_application_model/screens/login/components/background.dart';
-import 'package:flutter_application_model/screens/signup/signup.dart';
+import 'package:flutter_application_model/screens/login/login.dart';
+import 'package:flutter_application_model/screens/signup/components/background.dart';
+import 'package:flutter_application_model/screens/signup/components/or_divider.dart';
+import 'package:flutter_application_model/screens/signup/components/social_icon.dart';
 import 'package:flutter_application_model/stores/login_store.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     LoginStore loginStore = LoginStore();
@@ -31,18 +27,15 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                'LOGIN',
+                'SIGN UP',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               SizedBox(
                 height: size.height * 0.03,
               ),
               SvgPicture.asset(
-                'assets/icons/login.svg',
-                height: size.height * 0.3,
-              ),
-              SizedBox(
-                height: size.height * 0.03,
+                'assets/icons/signup.svg',
+                width: size.height * 0.35,
               ),
               Observer(
                 builder: (_) {
@@ -75,13 +68,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Observer(
                 builder: (_) {
                   return RoundedButton(
-                    text: 'LOGIN',
+                    text: 'SIGN UP',
                     onPress: loginStore.isFormValid
                         ? () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
+                                builder: (context) => const LoginScreen(),
                               ),
                             );
                           }
@@ -93,14 +86,33 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: size.height * 0.03,
               ),
               AlreadyHaveAnAccountCheck(
+                login: false,
                 onPress: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SignUpScreen(),
+                      builder: (context) => const LoginScreen(),
                     ),
                   );
                 },
+              ),
+              const OrDivider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SocialIcon(
+                    iconSrc: 'assets/icons/facebook.svg',
+                    onPress: () {},
+                  ),
+                  SocialIcon(
+                    iconSrc: 'assets/icons/twitter.svg',
+                    onPress: () {},
+                  ),
+                  SocialIcon(
+                    iconSrc: 'assets/icons/google-plus.svg',
+                    onPress: () {},
+                  ),
+                ],
               ),
             ],
           ),
