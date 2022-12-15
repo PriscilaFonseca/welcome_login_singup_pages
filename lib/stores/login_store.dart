@@ -5,41 +5,44 @@ class LoginStore = LoginStoreBase with _$LoginStore;
 
 abstract class LoginStoreBase with Store {
   @observable
-  String email = '';
-
-  @action
-  void setEmail(String value) => email = value;
+  String _email = '';
 
   @observable
-  String password = '';
-
-  @action
-  void setPassword(String value) => password = value;
+  String _password = '';
 
   @observable
   bool passwordVisible = false;
 
-  @action
-  void togglePasswordVisibility() => passwordVisible = !passwordVisible;
+  @observable
+  bool _isEmailEdited = false;
+
+  @observable
+  bool _isPwdEdited = false;
+
+  @computed
+  bool get isEmailEdited => _isEmailEdited;
+
+  @computed
+  bool get isPwdEdited => _isPwdEdited;
 
   @computed
   bool get isEmailValid => RegExp(
           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-      .hasMatch(email);
+      .hasMatch(_email);
 
   @computed
   bool get isPasswordValid {
-    if (password.length < 8 ||
-        (!password.contains(
+    if (_password.length < 8 ||
+        (!_password.contains(
           RegExp(r"[a-z]"),
         )) ||
-        (!password.contains(
+        (!_password.contains(
           RegExp(r"[A-Z]"),
         )) ||
-        (!password.contains(
+        (!_password.contains(
           RegExp(r"[0-9]"),
         )) ||
-        (!password.contains(
+        (!_password.contains(
           RegExp(r'[!@#$%^&*(),.?":{}|<>]'),
         ))) return false;
     return true;
@@ -48,21 +51,35 @@ abstract class LoginStoreBase with Store {
   @computed
   bool get isFormValid => isEmailValid && isPasswordValid;
 
-  String validatePassword() {
-    if (password.length < 8) return 'The password needs at least 8 characters';
-    if (!password.contains(
-      RegExp(r"[a-z]"),
-    )) return 'The password needs at least 1 lowercase letter';
-    if (!password.contains(
-      RegExp(r"[A-Z]"),
-    )) return 'The password needs at least 1 lowercase letter';
-    if (!password.contains(
-      RegExp(r"[0-9]"),
-    )) return 'The password needs at least one number';
-    if (!password.contains(
-      RegExp(r'[!@#$%^&*(),.?":{}|<>]'),
-    )) return 'The password needs at least one special character';
+  @action
+  void setEmail(String value) => _email = value;
 
+  @action
+  void setPassword(String value) => _password = value;
+
+  @action
+  void setEmailEdited(bool value) => _isEmailEdited = value;
+
+  @action
+  void setPwdEdited(bool value) => _isPwdEdited = value;
+
+  @action
+  void togglePasswordVisibility() => passwordVisible = !passwordVisible;
+
+  String validatePassword() {
+    if (_password.length < 8) return 'The password needs at least 8 characters';
+    if (!_password.contains(
+      RegExp(r"[a-z]"),
+    )) return 'The password needs at least lowercase letter';
+    if (!_password.contains(
+      RegExp(r"[A-Z]"),
+    )) return 'The password needs at least capital letter';
+    if (!_password.contains(
+      RegExp(r"[0-9]"),
+    )) return 'The password needs at least number';
+    if (!_password.contains(
+      RegExp(r'[!@#$%^&*(),.?":{}|<>]'),
+    )) return 'The password needs at least special character';
     return '';
   }
 
