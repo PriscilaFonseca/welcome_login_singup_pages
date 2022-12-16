@@ -3,7 +3,7 @@ import 'package:flutter_application_model/components/rounded_button.dart';
 import 'package:flutter_application_model/constants.dart';
 import 'package:flutter_application_model/screens/login/login.dart';
 import 'package:flutter_application_model/screens/signup/signup.dart';
-import 'package:flutter_application_model/screens/welcome/components/backgroud.dart';
+import 'package:flutter_application_model/components/backgroud_welcome.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
