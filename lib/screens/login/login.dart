@@ -3,6 +3,8 @@ import 'package:flutter_application_model/components/already_have_an_account.dar
 import 'package:flutter_application_model/components/rounded_button.dart';
 import 'package:flutter_application_model/components/rounded_inpult_field.dart';
 import 'package:flutter_application_model/components/rounded_password_field.dart';
+import 'package:flutter_application_model/components/reset_password.dart';
+import 'package:flutter_application_model/screens/forgot/forgot_password.dart';
 import 'package:flutter_application_model/screens/home/home.dart';
 import 'package:flutter_application_model/screens/login/components/background.dart';
 import 'package:flutter_application_model/screens/signup/signup.dart';
@@ -91,6 +93,19 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(
                 height: size.height * 0.03,
+              ),
+              ResetPassword(
+                onPress: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgotPassword(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: size.height * 0.01,
               ),
               AlreadyHaveAnAccountCheck(
                 onPress: () {
