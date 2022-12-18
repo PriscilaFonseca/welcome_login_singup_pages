@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_model/components/already_have_an_account.dart';
+import 'package:flutter_application_model/components/bottom_navigation_bar.dart';
 import 'package:flutter_application_model/components/rounded_button.dart';
 import 'package:flutter_application_model/components/rounded_inpult_field.dart';
 import 'package:flutter_application_model/components/rounded_password_field.dart';
 import 'package:flutter_application_model/components/reset_password.dart';
 import 'package:flutter_application_model/screens/forgot/forgot_password.dart';
-import 'package:flutter_application_model/screens/home/home.dart';
 import 'package:flutter_application_model/components/background_login.dart';
 import 'package:flutter_application_model/screens/signup/signup.dart';
 import 'package:flutter_application_model/stores/login_store.dart';
@@ -83,7 +83,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
+                                builder: (context) =>
+                                    const BottomNavigationBarWidget(),
                               ),
                             );
                           }
