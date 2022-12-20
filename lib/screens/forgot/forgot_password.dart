@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_model/components/background_forgot.dart';
+import 'package:flutter_application_model/screens/forgot/components/background_forgot.dart';
 import 'package:flutter_application_model/components/rounded_button.dart';
 import 'package:flutter_application_model/components/rounded_inpult_field.dart';
 import 'package:flutter_application_model/constants.dart';

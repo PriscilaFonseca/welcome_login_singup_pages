@@ -4,7 +4,7 @@ import 'package:flutter_application_model/components/rounded_button.dart';
 import 'package:flutter_application_model/components/rounded_inpult_field.dart';
 import 'package:flutter_application_model/components/rounded_password_field.dart';
 import 'package:flutter_application_model/screens/login/login.dart';
-import 'package:flutter_application_model/components/background_signup.dart';
+import 'package:flutter_application_model/screens/signup/components/background_signup.dart';
 import 'package:flutter_application_model/components/or_divider.dart';
 import 'package:flutter_application_model/components/social_icon.dart';
 import 'package:flutter_application_model/stores/login_store.dart';

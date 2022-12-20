@@ -6,7 +6,7 @@ import 'package:flutter_application_model/components/rounded_inpult_field.dart';
 import 'package:flutter_application_model/components/rounded_password_field.dart';
 import 'package:flutter_application_model/components/reset_password.dart';
 import 'package:flutter_application_model/screens/forgot/forgot_password.dart';
-import 'package:flutter_application_model/components/background_login.dart';
+import 'package:flutter_application_model/screens/login/components/background_login.dart';
 import 'package:flutter_application_model/screens/signup/signup.dart';
 import 'package:flutter_application_model/stores/login_store.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';

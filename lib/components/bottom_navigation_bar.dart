@@ -37,11 +37,10 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     return Scaffold(
       body: _widgetOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: pPrimaryLightColor,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: pPrimaryColor,
-        unselectedItemColor: pIconsHomeColor,
+        unselectedItemColor: pIconsNavigationColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -64,33 +63,3 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     );
   }
 }
-
-
-
- 
-    
-    
-    
-    
-   /*  SizedBox(
-      height: size.height * 0.15,
-      width: size.width * 0.2,
-      child: GestureDetector(
-        onTap: widget.onPress,
-        child: Column(
-          children: [
-            Icon(
-              widget.icon,
-              color: widget.color,
-              size: 40,
-            ),
-            Text(
-              widget.text,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-*/
