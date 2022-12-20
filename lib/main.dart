@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_model/constants.dart';
-import 'screens/welcome/welcome.dart';
+import 'package:flutter_application_model/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Application',
-      theme: ThemeData(
-          primaryColor: pPrimaryColor, scaffoldBackgroundColor: Colors.white),
-      home: const WelcomeScreen(),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+      home: const SplashScreen(),
     );
   }
 }
