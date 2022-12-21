@@ -7,12 +7,18 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SizedBox(
-        width: size.width * 0.8,
-        child: Column(
-          children: const [
-            Text('Search'),
-          ],
+      appBar: AppBar(
+          backgroundColor: Colors.black, automaticallyImplyLeading: false),
+      body: Center(
+        child: SizedBox(
+          height: size.width * 0.8,
+          child: Center(
+            child: Column(
+              children: const [
+                Text('Welcome'),
+              ],
+            ),
+          ),
         ),
       ),
     );
