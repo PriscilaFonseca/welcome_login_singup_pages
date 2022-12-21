@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const pPrimaryColor = Color(0xFF6F35A5);
+const pPrimaryColor = Color(0xFFD90769);
 const pSecondaryColor = Color(0xFFC197D2);
-const pPrimaryLightColor = Color(0xFFF1E6FF);
-const pSecondaryLightColor = Color(0xFFD9A1A0);
+const pPrimaryLightColor = Color(0xFFDBE4F2);
+const pSecondaryLightColor = Color(0xFFDFE9F2);
 const pMediumColor = Color(0xFF9A7EB5);
 const pIconsNavigationColor = Color(0xFF8E99A2);
 const pIconsProfileColor = Color(0xFFFFC2C7);

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_model/constants.dart';
 
-class ListTileProfile extends StatelessWidget {
+class ListTileAccount extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final String title;
   final String? subtitle;
   final bool subTitle;
   final Function() onPress;
-  const ListTileProfile(
+  const ListTileAccount(
       {super.key,
       required this.icon,
       required this.title,
       required this.onPress,
       this.subtitle,
       this.subTitle = false,
-      this.iconColor = pSecondaryColor});
+      this.iconColor = pPrimaryColor});
 
   @override
   Widget build(BuildContext context) {

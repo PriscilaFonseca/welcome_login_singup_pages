@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_model/constants.dart';
-import 'package:flutter_application_model/screens/profile/components/drawer_header.dart';
-import 'package:flutter_application_model/screens/profile/components/list_tile_profile.dart';
+import 'package:flutter_application_model/screens/account/components/drawer_header.dart';
+import 'package:flutter_application_model/screens/account/components/list_tile_account.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class AccountScreen extends StatefulWidget {
+  const AccountScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<AccountScreen> createState() => _AccountScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        automaticallyImplyLeading: false,
+      ),
       body: Drawer(
         width: double.infinity,
         backgroundColor: Colors.white,
@@ -32,42 +36,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(
                     height: size.height * 0.03,
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.chat,
                     title: 'Chat',
                     subTitle: true,
                     subtitle: 'My messages',
                     onPress: () {},
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.notifications,
                     title: 'Notification',
                     subTitle: true,
                     subtitle: 'My notification center',
                     onPress: () {},
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.payment,
                     title: 'Payments',
                     subTitle: true,
                     subtitle: 'Wallets and credcards',
                     onPress: () {},
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.favorite,
                     title: 'Favorites',
                     subTitle: true,
                     subtitle: 'My favorite places',
                     onPress: () {},
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.location_on,
                     title: 'Address',
                     subTitle: true,
                     subtitle: 'My delivery addresses',
                     onPress: () {},
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.fingerprint,
                     title: 'Data',
                     subTitle: true,
@@ -75,15 +79,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     onPress: () {},
                   ),
                   SizedBox(
-                    height: size.height * 0.03,
+                    height: size.height * 0.01,
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.help,
                     iconColor: pGreyLightColor,
                     title: 'Help',
                     onPress: () {},
                   ),
-                  ListTileProfile(
+                  ListTileAccount(
                     icon: Icons.settings,
                     iconColor: pGreyLightColor,
                     title: 'Settigns',

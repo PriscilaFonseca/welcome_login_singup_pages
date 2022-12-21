@@ -9,12 +9,13 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      duration: 1000,
+      duration: 1200,
       splash: 'assets/images/cherry_splash_screen.png',
-      splashIconSize: 200,
+      splashIconSize: 300,
       nextScreen: const WelcomeScreen(),
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.rightToLeftWithFade,
+      backgroundColor: Colors.white,
     );
   }
 }

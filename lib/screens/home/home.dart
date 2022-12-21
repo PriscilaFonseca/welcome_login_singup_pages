@@ -9,10 +9,12 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SizedBox(
         width: size.width * 0.8,
-        child: Column(
-          children: const [
-            Text('Welcome Home'),
-          ],
+        child: Center(
+          child: Column(
+            children: const [
+              Text('Welcome Home'),
+            ],
+          ),
         ),
       ),
     );
