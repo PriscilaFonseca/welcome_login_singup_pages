@@ -10,7 +10,7 @@ class BakeryStoresList extends StatefulWidget {
 
 class _BakeryStoresListState extends State<BakeryStoresList> {
   final List<Widget> _bakeryStores = List.generate(
-    6,
+    30,
     (index) => BakeryStoreWidget(
       title: '$index Bakery Name',
       image: 'assets/images/default_cake.jpg',

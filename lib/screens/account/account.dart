@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_model/constants.dart';
-import 'package:flutter_application_model/screens/account/components/delivery_addresses.dart';
+import 'package:flutter_application_model/screens/deliverys/delivery_addresses.dart';
 import 'package:flutter_application_model/screens/account/components/drawer_header.dart';
-import 'package:flutter_application_model/screens/account/components/favorites_bakerys.dart';
+import 'package:flutter_application_model/screens/favorites/favorites.dart';
 import 'package:flutter_application_model/screens/account/components/list_tile_account.dart';
 
 class AccountScreen extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_model/screens/account/components/delivery_addresses.dart';
+import 'package:flutter_application_model/screens/deliverys/delivery_addresses.dart';
 
 class AppBarHome extends StatelessWidget {
   const AppBarHome({super.key});

@@ -21,7 +21,7 @@ class BakeryStoreWidget extends StatefulWidget {
     required this.delivery,
     required this.time,
     this.icon = Icons.star,
-    this.color = pPrimaryLightColor,
+    this.color = Colors.white,
   });
 
   @override
@@ -45,7 +45,7 @@ class _BakeryStoreWidgetState extends State<BakeryStoreWidget> {
         },
         child: Center(
           child: Card(
-            elevation: 1,
+            elevation: 1.5,
             color: widget.color,
             child: SizedBox(
               height: size.height * 0.25,
