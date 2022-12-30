@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_model/constants.dart';
+import 'package:flutter_application_model/screens/account/components/delivery_addresses.dart';
 import 'package:flutter_application_model/screens/account/components/drawer_header.dart';
+import 'package:flutter_application_model/screens/account/components/favorites_bakerys.dart';
 import 'package:flutter_application_model/screens/account/components/list_tile_account.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -36,12 +38,15 @@ class _AccountScreenState extends State<AccountScreen> {
                   SizedBox(
                     height: size.height * 0.03,
                   ),
-                  ListTileAccount(
-                    icon: Icons.chat,
-                    title: 'Chat',
-                    subTitle: true,
-                    subtitle: 'My messages',
-                    onPress: () {},
+                  SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: ListTileAccount(
+                      icon: Icons.chat,
+                      title: 'Chat',
+                      subTitle: true,
+                      subtitle: 'My messages',
+                      onPress: () {},
+                    ),
                   ),
                   ListTileAccount(
                     icon: Icons.notifications,
@@ -62,14 +67,26 @@ class _AccountScreenState extends State<AccountScreen> {
                     title: 'Favorites',
                     subTitle: true,
                     subtitle: 'My favorite places',
-                    onPress: () {},
+                    onPress: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (builder) => const FavoritesBakerys(),
+                        ),
+                      );
+                    },
                   ),
                   ListTileAccount(
                     icon: Icons.location_on,
                     title: 'Address',
                     subTitle: true,
                     subtitle: 'My delivery addresses',
-                    onPress: () {},
+                    onPress: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (builder) => const DeliverysAddresses(),
+                        ),
+                      );
+                    },
                   ),
                   ListTileAccount(
                     icon: Icons.fingerprint,
@@ -91,6 +108,12 @@ class _AccountScreenState extends State<AccountScreen> {
                     icon: Icons.settings,
                     iconColor: pGreyLightColor,
                     title: 'Settigns',
+                    onPress: () {},
+                  ),
+                  ListTileAccount(
+                    icon: Icons.subdirectory_arrow_right_outlined,
+                    iconColor: pGreyLightColor,
+                    title: 'Logout',
                     onPress: () {},
                   ),
                 ],

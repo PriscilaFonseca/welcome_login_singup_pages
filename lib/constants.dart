@@ -10,3 +10,4 @@ const pIconsProfileColor = Color(0xFFFFC2C7);
 const pDividerColor = Color(0xFFD9D9D9);
 const pBlackColor = Color(0xFF000000);
 const pGreyLightColor = Color(0xFFD9D9D9);
+const pevaluationColor = Color(0xFFFFB100);

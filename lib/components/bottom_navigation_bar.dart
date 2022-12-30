@@ -20,7 +20,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   final List<Widget> _widgetOptions = [
     const HomeScreen(),
     const SearchScreen(),
-    const CalendarScreen(),
+    const OrdersScreen(),
     const AccountScreen(),
   ];
 
@@ -62,10 +62,10 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
           BottomNavigationBarItem(
             backgroundColor: Colors.white,
             icon: Icon(
-              Icons.calendar_month,
+              Icons.shopping_cart,
               size: 30,
             ),
-            label: 'Calendar',
+            label: 'Orders',
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.white,
